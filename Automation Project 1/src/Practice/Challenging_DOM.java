@@ -22,5 +22,16 @@ public static void main(String[] args) throws InterruptedException {
 		//Click on Challenging DOM Link 
 		driver.findElement(By.linkText("Challenging DOM")).click();
 		
+		try {
+			driver.findElement(By.xpath("//a[@class='button']")).click();
+			driver.findElement(By.xpath("//a[@class='button alert']")).click();
+			driver.findElement(By.xpath("//a[@class='button success']")).click();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		//Close the window
+		driver.quit();
+		
 	}
 }
